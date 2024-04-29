@@ -5,23 +5,8 @@
 			"rolls": 1,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:deepslate",
-					"functions": [
-						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 2010000
-						},
-						{
-							"function": "minecraft:set_custom_data",
-							"tag": "{\"common_signals\":{\"temp\":true}}"
-						}
-					]
-				}
-			],
-			"conditions": [
-				{
-					"condition": "minecraft:survives_explosion"
+					"type": "minecraft:loot_table",
+					"value": "common_signals:polished_deepslate"
 				}
 			]
 		},
@@ -50,14 +35,6 @@
 				"source": {
 					"type": "smithed:reference",
 					"path": "pools[0].entries[0]"
-				}
-			},
-			{
-				"type": "smithed:append",
-				"target": "pools[0].conditions",
-				"source": {
-					"type": "smithed:reference",
-					"path": "pools[0].conditions[0]"
 				}
 			}
 		]
