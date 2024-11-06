@@ -12,7 +12,7 @@ def main(config: dict) -> None:
 	major, minor, patch = version.split(".")
 	functions: str = f"{config['datapack_functions']}/v{version}"
 	advancements: str = f"{config['build_datapack']}/data/{namespace}/advancement/v{version}"
-	function_tags: str = f"{config['build_datapack']}/data/{namespace}/tags/function/"
+	function_tags: str = f"{config['build_datapack']}/data/{namespace}/tags/function"
 
 	# Write tick
 	write_to_file(f"{functions}/tick.mcfunction", f"""
@@ -40,7 +40,7 @@ function #{namespace}:signals/on_new_item
 # Check if the item is a temporary item and kill it
 execute if data entity @s Item.components."minecraft:custom_data".{namespace}.temp run kill @s
 """)
-	write_to_file(f"{function_tags}/signals/on_new_item.json", super_json_dump({"values": []}, max_level = -1))
+	write_to_file(f"{function_tags}/signals/on_new_item.json", super_json_dump({"values": []}))
 
 	pass
 
