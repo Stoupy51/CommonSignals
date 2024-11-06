@@ -5,7 +5,7 @@
 		}
 	},
 	"rewards": {
-		"function": "common_signals:v0.0.4/inventory_changed"
+		"function": "common_signals:v0.0.5/inventory_changed"
 	}
 }
 
