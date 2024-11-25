@@ -12,7 +12,7 @@ The initial goal is to prevent multiple datapacks from ticking the same ineffici
 ## Available Signals 📡
 
 🔔 Common Signals provides several function tags that developers can hook into:
-- `#common_signals:signals/on_new_item` - 📦 Triggered when a new item entity is detected in the world (not having the `common_signals.checked` tag)
+- `#common_signals:signals/on_new_item`: 📦 Triggered when a new item entity is detected in the world (not having the `common_signals.checked` tag)
 
 Feel free to suggest new signals!
 
