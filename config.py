@@ -11,9 +11,9 @@ BUILD_FOLDER: str = f"{ROOT}/build"					# Folder where the final datapack and re
 BUILD_COPY_DESTINATIONS: tuple[list, list] = (["E:/my_folders/advanced_desktop/python_datapack/src/python_datapack/dependencies/datapack/Common Signals.zip"], [])	# Can be empty lists if you don't want to copy the generated files
 
 # Datapack related constants
-AUTHOR: str = "Stoupy51"				# Author(s) name(s) displayed in pack.mcmeta, also used to add convention.debug tag to the players of the same name(s) <-- showing additionnal displays like datapack loading
+AUTHOR: str = "Stoupy51"					# Author(s) name(s) displayed in pack.mcmeta, also used to add convention.debug tag to the players of the same name(s) <-- showing additionnal displays like datapack loading
 PROJECT_NAME: str = "Common Signals"		# Name of the datapack, used for messages and items lore
-VERSION: str = "0.0.5"					# Datapack version in the following mandatory format: major.minor.patch, ex: 1.0.0 or 1.21.615
+VERSION: str = "0.1.0"						# Datapack version in the following mandatory format: major.minor.patch, ex: 1.0.0 or 1.21.615
 NAMESPACE: str = "common_signals"			# Should be the same you use in the merge folder. Used to namespace functions, tags, etc.
 DESCRIPTION = f"{PROJECT_NAME} [{VERSION}] by {AUTHOR}"	# Pack description displayed in pack.mcmeta
 

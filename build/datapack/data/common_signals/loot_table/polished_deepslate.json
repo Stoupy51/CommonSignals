@@ -9,16 +9,17 @@
 					"name": "minecraft:deepslate",
 					"functions": [
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 2010000
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "air",
+								"minecraft:custom_data": "{\"common_signals\":{\"temp\":true}}"
+							}
 						},
 						{
-							"function": "minecraft:set_custom_data",
-							"tag": "{\"common_signals\":{\"temp\":true}}"
-						},
-						{
-							"function": "minecraft:set_custom_data",
-							"tag": "{\"common_signals\":{\"silk_touch\":true}}",
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:custom_data": "{\"common_signals\":{\"silk_touch\":true,\"temp\":true}}"
+							},
 							"conditions": [
 								{
 									"condition": "minecraft:match_tool",
