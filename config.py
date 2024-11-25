@@ -7,7 +7,6 @@ IGNORE_UNSET: bool = True							# If True, the program will ignore unset optionn
 
 # Folders
 ASSETS_FOLDER: str = f"{ROOT}/assets"				# Folder where the assets are stored
-MERGE_FOLDER: str = f"{ROOT}/merge"					# If a file exists in both merge and build folder, they will be merged. Otherwise, it's just copied.
 BUILD_FOLDER: str = f"{ROOT}/build"					# Folder where the final datapack and resource pack are built
 BUILD_COPY_DESTINATIONS: tuple[list, list] = (["E:/my_folders/advanced_desktop/python_datapack/src/python_datapack/dependencies/datapack/Common Signals.zip"], [])	# Can be empty lists if you don't want to copy the generated files
 
@@ -25,7 +24,6 @@ configuration = {
 
 	"assets_folder": ASSETS_FOLDER,
 	"build_folder": BUILD_FOLDER,
-	"merge_folder": MERGE_FOLDER,
 	"build_copy_destinations": BUILD_COPY_DESTINATIONS,
 	"author": AUTHOR,
 	"project_name": PROJECT_NAME,

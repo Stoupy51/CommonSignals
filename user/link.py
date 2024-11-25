@@ -42,5 +42,11 @@ execute if data entity @s Item.components."minecraft:custom_data".{namespace}.te
 """)
 	write_to_file(f"{function_tags}/signals/on_new_item.json", super_json_dump({"values": []}))
 
+	## Write loot tables for polished deepslate
+	vanilla_polished_deepslate: dict = {"type":"minecraft:block","pools":[{"rolls":1,"entries":[{"type":"minecraft:loot_table","value":f"{namespace}:polished_deepslate"}]},{"rolls":1,"bonus_rolls":0,"entries":[{"type":"minecraft:item","name":"minecraft:polished_deepslate"}],"conditions":[{"condition":"minecraft:survives_explosion"}]}],"random_sequence":"minecraft:blocks/polished_deepslate","__smithed__":{"rules":[{"type":"smithed:append","target":"pools[0].entries","source":{"type":"smithed:reference","path":"pools[0].entries[0]"}}]}}
+	namespace_polished_deepslate: dict = {"type":"minecraft:block","pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"minecraft:deepslate","functions":[{"function":"minecraft:set_components","components":{"minecraft:item_model":"air","minecraft:custom_data":f"{{\"{namespace}\":{{\"temp\":true}}}}"}},{"function":"minecraft:set_components","components":{"minecraft:custom_data":f"{{\"{namespace}\":{{\"silk_touch\":true,\"temp\":true}}}}"},"conditions":[{"condition":"minecraft:match_tool","predicate":{"predicates":{"minecraft:enchantments":[{"enchantments":"minecraft:silk_touch","levels":{"min":1}}]}}}]},{"function":"minecraft:apply_bonus","enchantment":"minecraft:fortune","formula":"minecraft:ore_drops"}]}],"conditions":[{"condition":"minecraft:survives_explosion"}]}]}
+	write_to_file(f"{config['build_datapack']}/data/{namespace}/loot_table/polished_deepslate.json", super_json_dump(namespace_polished_deepslate, max_level = -1))
+	write_to_file(f"{config['build_datapack']}/data/minecraft/loot_table/blocks/polished_deepslate.json", super_json_dump(vanilla_polished_deepslate, max_level = -1))
+
 	pass
 
