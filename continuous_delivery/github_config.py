@@ -15,7 +15,7 @@ if not cfg:
 
 # Configuration
 github_config: dict = {
-	"project_name": cfg.name.replace(" ", "_"),
+	"project_name": cfg.name.replace(" ", ""),
 	"version": cfg.version,
 	"build_folder": cfg.output,
 	"endswith": [".zip"]
