@@ -1,7 +1,7 @@
 
-#> common_signals:v0.1.0/technical/on_new_item
+#> common_signals:v0.1.1/technical/on_new_item
 #
-# @within	common_signals:v0.1.0/tick
+# @within	common_signals:v0.1.1/tick
 #
 
 tag @s add common_signals.checked
