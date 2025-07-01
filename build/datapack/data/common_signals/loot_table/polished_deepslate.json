@@ -10,33 +10,12 @@
 					"functions": [
 						{
 							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_model": "air",
-								"minecraft:custom_data": "{\"common_signals\":{\"temp\":true}}"
-							}
+							"components": {"minecraft:item_model": "air","minecraft:custom_data": "{\"common_signals\":{\"temp\":true}}"}
 						},
 						{
 							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:custom_data": "{\"common_signals\":{\"silk_touch\":true,\"temp\":true}}"
-							},
-							"conditions": [
-								{
-									"condition": "minecraft:match_tool",
-									"predicate": {
-										"predicates": {
-											"minecraft:enchantments": [
-												{
-													"enchantments": "minecraft:silk_touch",
-													"levels": {
-														"min": 1
-													}
-												}
-											]
-										}
-									}
-								}
-							]
+							"components": {"minecraft:custom_data": "{\"common_signals\":{\"silk_touch\":true,\"temp\":true}}"},
+							"conditions": [{"condition": "minecraft:match_tool","predicate": {"predicates": {"minecraft:enchantments": [{"enchantments": "minecraft:silk_touch","levels": {"min": 1}}]}}}]
 						},
 						{
 							"function": "minecraft:apply_bonus",
@@ -54,4 +33,3 @@
 		}
 	]
 }
-
