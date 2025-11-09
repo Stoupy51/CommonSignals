@@ -1,6 +1,6 @@
 
 # Imports
-from stewbeet import Advancement, Context, FunctionTag, LootTable, set_json_encoder, write_tick_file, write_versioned_function
+from stewbeet import Advancement, Context, FunctionTag, JsonDict, LootTable, set_json_encoder, write_tick_file, write_versioned_function
 
 
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
@@ -15,16 +15,26 @@ def beet_default(ctx: Context) -> None:
 execute as @e[type=item,tag=!{ns}.checked] run function {ns}:v{version}/technical/on_new_item
 """)
 
+	# New signal when block is destroyed, to break any custom blocks at position
+	write_versioned_function("destroyed_block", f"""
+# Run tick function
+function {ns}:v{version}/tick
+
+# Call custom block destroy functions
+function #{ns}:signals/custom_block_destroy
+""", tags=[f"{ns}:calls/destroyed_block"])
+	ctx.data[ns].function_tags["signals/custom_block_destroy"] = set_json_encoder(FunctionTag({"values": []}))
+
 
 	# Write inventory changed advancement functions
 	write_versioned_function("inventory_changed", f"""
 advancement revoke @s only {ns}:v{version}/inventory_changed
 execute if score #{ns}.major load.status matches {major} if score #{ns}.minor load.status matches {minor} if score #{ns}.patch load.status matches {patch} run function {ns}:v{version}/technical/inventory_changed
-""")
+""")  # noqa: E501
 	write_versioned_function("technical/inventory_changed", f'clear @s *[minecraft:custom_data={{"{ns}":{{"temp":true}}}}]')
 
 	# Write inventory changed advancement
-	adv: dict = {"criteria": {"requirement": {"trigger": "minecraft:inventory_changed"}},"rewards": {"function": f"{ns}:v{version}/inventory_changed"}}
+	adv: JsonDict = {"criteria": {"requirement": {"trigger": "minecraft:inventory_changed"}},"rewards": {"function": f"{ns}:v{version}/inventory_changed"}}
 	ctx.data[ns].advancements[f"v{version}/inventory_changed"] = set_json_encoder(Advancement(adv), max_level=-1)
 
 	# Write on_new_item function and function tag

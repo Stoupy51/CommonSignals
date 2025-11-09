@@ -1,7 +1,8 @@
 
 #> common_signals:v0.1.2/tick
 #
-# @within	common_signals:v0.1.2/load/tick_verification
+# @within	common_signals:v0.1.2/destroyed_block
+#			common_signals:v0.1.2/load/tick_verification
 #
 
 # For each new item discovered, run a signal
