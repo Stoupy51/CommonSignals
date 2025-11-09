@@ -2,8 +2,9 @@
 	"pack": {
 		"pack_format": 81,
 		"description": "Common Signals [0.2.0] by Stoupy51",
-		"min_format": [88,0],
-		"max_format": [88,0]
+		"supported_formats": [81,1000],
+		"min_format": 81,
+		"max_format": [1000,0]
 	},
 	"id": "common_signals"
 }
