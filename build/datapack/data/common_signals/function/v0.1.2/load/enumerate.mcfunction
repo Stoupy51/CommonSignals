@@ -1,5 +1,5 @@
 
-#> common_signals:v0.1.1/load/enumerate
+#> common_signals:v0.1.2/load/enumerate
 #
 # @within	#common_signals:enumerate
 #
@@ -11,5 +11,5 @@ execute unless score #common_signals.major load.status matches 0.. run scoreboar
 execute if score #common_signals.major load.status matches 0 unless score #common_signals.minor load.status matches 1.. run scoreboard players set #common_signals.minor load.status 1
 
 # If current patch is too low, set it to the current patch (only if major and minor are correct)
-execute if score #common_signals.major load.status matches 0 if score #common_signals.minor load.status matches 1 unless score #common_signals.patch load.status matches 1.. run scoreboard players set #common_signals.patch load.status 1
+execute if score #common_signals.major load.status matches 0 if score #common_signals.minor load.status matches 1 unless score #common_signals.patch load.status matches 2.. run scoreboard players set #common_signals.patch load.status 2
 
