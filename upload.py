@@ -25,7 +25,7 @@ changelog: str = upload_to_github(credentials, github_config)
 # Upload to Modrinth
 modrinth_config: JsonDict = {
 	"slug": cfg.id,
-	"project_name": cfg.name,
+	"project_name": cfg.name.replace(" ", ""),
 	"version": cfg.version,
 	"authors": cfg.author,
 	"summary": "Minecraft datapack library aiming to make in common several selectors to improve optimization",
