@@ -24,11 +24,5 @@ Feel free to suggest new signals!
 
 ## ⭐ Star History
 
-<a href="https://star-history.com/#Stoupy51/CommonSignals&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Stoupy51/CommonSignals&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Stoupy51/CommonSignals&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Stoupy51/CommonSignals&type=Date" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/chart?repos=Stoupy51/CommonSignals&type=date&legend=top-left)](https://www.star-history.com/?repos=Stoupy51%2FCommonSignals&type=date&legend=top-left)
 
