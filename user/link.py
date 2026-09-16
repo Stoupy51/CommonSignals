@@ -57,50 +57,46 @@ execute if data entity @s Item.components."minecraft:custom_data".{ns}.temp run 
 					{
 						"type": "minecraft:item",
 						"name": "minecraft:deepslate",
-						"functions": [
+						"modifier": [
 							{
-								"function": "minecraft:set_components",
+								"type": "minecraft:set_components",
 								"components": {
 									"minecraft:item_model": "air",
 									"minecraft:custom_data": f"""{{"{ns}":{{"temp":true}}}}"""
 								}
 							},
 							{
-								"function": "minecraft:set_components",
+								"type": "minecraft:set_components",
 								"components": {
 									"minecraft:custom_data": f"""{{"{ns}":{{"silk_touch":true,"temp":true}}}}"""
 								},
-								"conditions": [
-									{
-										"condition": "minecraft:match_tool",
-										"predicate": {
-											"predicates": {
-												"minecraft:enchantments": [
-													{
-														"enchantments": "minecraft:silk_touch",
-														"levels": {
-															"min": 1
-														}
+								"condition": {
+									"type": "minecraft:match_tool",
+									"predicate": {
+										"predicates": {
+											"minecraft:enchantments": [
+												{
+													"enchantments": "minecraft:silk_touch",
+													"levels": {
+														"min": 1
 													}
-												]
-											}
+												}
+											]
 										}
 									}
-								]
+								}
 							},
 							{
-								"function": "minecraft:apply_bonus",
+								"type": "minecraft:apply_bonus",
 								"enchantment": "minecraft:fortune",
 								"formula": "minecraft:ore_drops"
 							}
 						]
 					}
 				],
-				"conditions": [
-					{
-						"condition": "minecraft:survives_explosion"
-					}
-				]
+				"condition": {
+					"type": "minecraft:survives_explosion"
+				}
 			}
 		]
 	}), max_level=7)
@@ -125,11 +121,9 @@ execute if data entity @s Item.components."minecraft:custom_data".{ns}.temp run 
 						"name": "minecraft:polished_deepslate"
 					}
 				],
-				"conditions": [
-					{
-						"condition": "minecraft:survives_explosion"
-					}
-				]
+				"condition": {
+					"type": "minecraft:survives_explosion"
+				}
 			}
 		],
 		"random_sequence": "minecraft:blocks/polished_deepslate",

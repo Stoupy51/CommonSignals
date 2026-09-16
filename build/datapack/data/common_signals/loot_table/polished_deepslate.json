@@ -7,29 +7,27 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:deepslate",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {"minecraft:item_model": "air","minecraft:custom_data": "{\"common_signals\":{\"temp\":true}}"}
 						},
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {"minecraft:custom_data": "{\"common_signals\":{\"silk_touch\":true,\"temp\":true}}"},
-							"conditions": [{"condition": "minecraft:match_tool","predicate": {"predicates": {"minecraft:enchantments": [{"enchantments": "minecraft:silk_touch","levels": {"min": 1}}]}}}]
+							"condition": {"type": "minecraft:match_tool","predicate": {"predicates": {"minecraft:enchantments": [{"enchantments": "minecraft:silk_touch","levels": {"min": 1}}]}}}
 						},
 						{
-							"function": "minecraft:apply_bonus",
+							"type": "minecraft:apply_bonus",
 							"enchantment": "minecraft:fortune",
 							"formula": "minecraft:ore_drops"
 						}
 					]
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:survives_explosion"
-				}
-			]
+			"condition": {
+				"type": "minecraft:survives_explosion"
+			}
 		}
 	]
 }
